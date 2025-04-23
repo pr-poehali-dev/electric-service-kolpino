@@ -6,7 +6,7 @@ export default {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}"
 	],
 	prefix: "",
 	theme: {
@@ -24,6 +24,12 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				tele2: {
+					purple: '#731982',
+					black: '#1F2229',
+					lightpurple: '#a889f5',
+					darkpurple: '#3A1957'
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +90,27 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				flicker: {
+					'0%, 18%, 22%, 25%, 53%, 57%, 100%': {
+						opacity: '0.99',
+						filter: 'brightness(1) drop-shadow(0 0 10px #a889f5)'
+					},
+					'20%, 24%, 55%': {
+						opacity: '0.5',
+						filter: 'brightness(0.7)'
+					}
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'flicker': 'flicker 5s infinite alternate',
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
 			}
 		}
 	},
